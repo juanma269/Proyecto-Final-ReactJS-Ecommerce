@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import CounterContainer from "../../common/counter/CounterContainer";
 import { products } from "../../productsMocks";
 import { useParams } from "react-router-dom";
+import { Container } from "@mui/material";
+import DetailProductCard from "../../common/detailProductCard/DetailProductCard";
 
 const ItemDetail = () => {
   const [producto, setProducto] = useState({});
@@ -9,10 +10,7 @@ const ItemDetail = () => {
 
   useEffect(() => {
     let productoSeleccionado = products.find((elemento) => elemento.id === +id);
-    const tarea = new Promise((res, rej) => {
-      res(productoSeleccionado);
-    });
-    tarea.then((res) => setProducto(res));
+    setProducto(productoSeleccionado);
   }, [id]);
 
   const onAdd = (cantidad) => {
@@ -20,12 +18,9 @@ const ItemDetail = () => {
     console.log(cantidad);
   };
   return (
-    <div>
-      <h2>{producto.title}</h2>
-      <h4>{producto.price}</h4>
-
-      <CounterContainer stock={producto.stock} onAdd={onAdd} />
-    </div>
+    <Container maxWidth="md">
+      <DetailProductCard product={producto} onAdd={onAdd} />
+    </Container>
   );
 };
 
