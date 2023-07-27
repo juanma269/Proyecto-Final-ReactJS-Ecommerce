@@ -1,10 +1,25 @@
-import { Box, Button, Grid } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  Grid,
+  IconButton,
+  InputAdornment,
+  InputLabel,
+  OutlinedInput,
+} from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { Padding } from "@mui/icons-material";
 
 const Counter = ({ contador, sumar, restar, onAdd }) => {
+  const handleMouseDownQuantity = (event) => {
+    event.preventDefault();
+  };
   return (
     <Box
       sx={{
-        height: 100,
+        height: 90,
         width: 700,
         display: "flex",
         flexDirection: "column",
@@ -16,25 +31,55 @@ const Counter = ({ contador, sumar, restar, onAdd }) => {
         xs={4}
         sm={4}
         md={6}
-        xl={8}
+        xl={12}
         display={"flex"}
-        flexDirection={"row"}
-        margin={5}
         justifyContent="space-evenly"
+        alignItems={"center"}
       >
-        <Button onClick={sumar} variant="contained">
-          sumar
-        </Button>
-        <h3>{contador}</h3>
-        <Button onClick={restar} variant="contained">
-          restar
-        </Button>
+        <FormControl sx={{ m: 1, width: "20ch" }} variant="outlined">
+          <InputLabel htmlFor="quantity">Cantidad</InputLabel>
+          <OutlinedInput
+            id="quantity"
+            label="Cantidad"
+            value={contador}
+            sx={{
+              m: 1,
+              width: "150px",
+              input: { textAlign: "center" },
+            }}
+            startAdornment={
+              <InputAdornment position="start">
+                <IconButton
+                  onClick={restar}
+                  onMouseDown={handleMouseDownQuantity}
+                  edge="start"
+                  color="primary"
+                >
+                  <RemoveIcon />
+                </IconButton>
+              </InputAdornment>
+            }
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  onClick={sumar}
+                  onMouseDown={handleMouseDownQuantity}
+                  edge="end"
+                  color="primary"
+                >
+                  <AddIcon />
+                </IconButton>
+              </InputAdornment>
+            }
+          />
+        </FormControl>
+
         <Button
           onClick={() => onAdd(contador)}
           variant="contained"
-          color="success"
+          color="primary"
         >
-          Agregar al carrito
+          Agregar al carrito 🛒
         </Button>
       </Grid>
     </Box>
