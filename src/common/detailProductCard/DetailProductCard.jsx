@@ -16,7 +16,7 @@ const DetailProductCard = ({ product, onAdd }) => {
             {product.title}
           </Typography>
           <Typography variant="h6" color="text.secondary">
-            {product.price}
+            {"$" + product.price}
           </Typography>
           <img src={product.img} width="100%"></img>
           <Typography variant="body2" color="text.secondary">
