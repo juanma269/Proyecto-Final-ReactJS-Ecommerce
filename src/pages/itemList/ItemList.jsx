@@ -1,7 +1,6 @@
 import ProductCard from "../../common/ProductCard/productCard";
 
 const ItemList = ({ items }) => {
-  console.log("Aca llego al presentacional los items: ", items);
   return (
     <div>
       <h1>Productos</h1>

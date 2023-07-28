@@ -95,9 +95,6 @@ const Navbar = () => {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                <MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Todos</Typography>
-                </MenuItem>
                 <MenuItem onClick={handleOpenCatMenu}>
                   <Typography textAlign="center">Categorias</Typography>
                 </MenuItem>
@@ -111,7 +108,7 @@ const Navbar = () => {
               variant="h5"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -187,8 +184,10 @@ const Navbar = () => {
                   MEMORIAS USB
                 </MenuItem>
               </Menu>
+
               <Button
                 onClick={handleCloseNavMenu}
+                href="/cart"
                 sx={{
                   my: 2,
                   color: "white",
@@ -200,9 +199,9 @@ const Navbar = () => {
             </Box>
 
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
+              <Tooltip title="Opciones">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar alt="Perfil" src="../public/robix.png" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -222,10 +221,10 @@ const Navbar = () => {
                 onClose={handleCloseUserMenu}
               >
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Profile</Typography>
+                  <Typography textAlign="center">Perfil</Typography>
                 </MenuItem>
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Logout</Typography>
+                  <Typography textAlign="center">Cerrar Sesion</Typography>
                 </MenuItem>
               </Menu>
             </Box>
