@@ -98,7 +98,11 @@ const Navbar = () => {
                 <MenuItem onClick={handleOpenCatMenu}>
                   <Typography textAlign="center">Categorias</Typography>
                 </MenuItem>
-                <MenuItem onClick={handleCloseNavMenu}>
+                <MenuItem
+                  onClick={handleCloseNavMenu}
+                  component={"a"}
+                  href="/cart"
+                >
                   <ShoppingCartIcon />
                 </MenuItem>
               </Menu>
