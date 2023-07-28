@@ -13,7 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../footer/Footer";
 
 const Navbar = () => {
@@ -51,8 +51,8 @@ const Navbar = () => {
             <Typography
               variant="h6"
               noWrap
-              component="a"
-              href="/"
+              component={NavLink}
+              to="/"
               sx={{
                 mr: 2,
                 display: { xs: "none", md: "flex" },
@@ -100,8 +100,8 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   onClick={handleCloseNavMenu}
-                  component={"a"}
-                  href="/cart"
+                  component={NavLink}
+                  to="/cart"
                 >
                   <ShoppingCartIcon />
                 </MenuItem>
@@ -111,8 +111,8 @@ const Navbar = () => {
             <Typography
               variant="h5"
               noWrap
-              component="a"
-              href="/"
+              component={NavLink}
+              to="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -144,7 +144,7 @@ const Navbar = () => {
               >
                 <MenuItem
                   onClick={handleCloseCatMenu}
-                  component={Link}
+                  component={NavLink}
                   to="/"
                   underline="none"
                   color="inherit"
@@ -153,7 +153,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   onClick={handleCloseCatMenu}
-                  component={Link}
+                  component={NavLink}
                   to="/category/teclados"
                   underline="none"
                   color="inherit"
@@ -162,7 +162,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   onClick={handleCloseCatMenu}
-                  component={Link}
+                  component={NavLink}
                   to="/category/mouse"
                   underline="none"
                   color="inherit"
@@ -171,7 +171,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   onClick={handleCloseCatMenu}
-                  component={Link}
+                  component={NavLink}
                   to="/category/sillas"
                   underline="none"
                   color="inherit"
@@ -180,7 +180,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   onClick={handleCloseCatMenu}
-                  component={Link}
+                  component={NavLink}
                   to="/category/memorias-usb"
                   underline="none"
                   color="inherit"
@@ -191,7 +191,8 @@ const Navbar = () => {
 
               <Button
                 onClick={handleCloseNavMenu}
-                href="/cart"
+                component={NavLink}
+                to="/cart"
                 sx={{
                   my: 2,
                   color: "white",
