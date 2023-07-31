@@ -12,9 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../footer/Footer";
+import CartWidget from "../../common/cartWidget/CartWidget";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -98,12 +98,8 @@ const Navbar = () => {
                 <MenuItem onClick={handleOpenCatMenu}>
                   <Typography textAlign="center">Categorias</Typography>
                 </MenuItem>
-                <MenuItem
-                  onClick={handleCloseNavMenu}
-                  component={NavLink}
-                  to="/cart"
-                >
-                  <ShoppingCartIcon />
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <CartWidget />
                 </MenuItem>
               </Menu>
             </Box>
@@ -189,17 +185,8 @@ const Navbar = () => {
                 </MenuItem>
               </Menu>
 
-              <Button
-                onClick={handleCloseNavMenu}
-                component={NavLink}
-                to="/cart"
-                sx={{
-                  my: 2,
-                  color: "white",
-                  display: "block",
-                }}
-              >
-                <ShoppingCartIcon />
+              <Button onClick={handleCloseNavMenu}>
+                <CartWidget />
               </Button>
             </Box>
 
