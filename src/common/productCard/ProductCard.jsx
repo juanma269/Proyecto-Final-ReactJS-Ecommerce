@@ -29,12 +29,9 @@ const ProductCard = ({ elemento }) => {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Comprar
-        </Button>
         <Link to={`/item-detail/${elemento.id}`}>
-          <Button size="small" color="primary">
-            Ver Detalles
+          <Button size="small" color="primary" variant="outlined">
+            Ver Detalle
           </Button>
         </Link>
       </CardActions>

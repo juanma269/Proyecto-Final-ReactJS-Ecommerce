@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Button } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const CartContainer = () => {
   const { cart, clearCart } = useContext(CartContext);
@@ -18,7 +19,12 @@ const CartContainer = () => {
         );
       })}
 
-      <Button onClick={clearCart} color="secondary" variant="contained">
+      <Button
+        variant="outlined"
+        color="secondary"
+        onClick={clearCart}
+        endIcon={<DeleteIcon />}
+      >
         Limpiar carrito
       </Button>
     </div>

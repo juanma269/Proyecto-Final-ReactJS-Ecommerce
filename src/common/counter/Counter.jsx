@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 const Counter = ({ contador, sumar, restar, onAdd }) => {
   const handleMouseDownQuantity = (event) => {
@@ -75,10 +76,11 @@ const Counter = ({ contador, sumar, restar, onAdd }) => {
 
         <Button
           onClick={() => onAdd(contador)}
-          variant="contained"
+          variant="outlined"
           color="primary"
+          endIcon={<AddShoppingCartIcon />}
         >
-          Agregar al carrito 🛒
+          Agregar al carrito
         </Button>
       </Grid>
     </Box>
