@@ -12,6 +12,41 @@ import Swal from "sweetalert2";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById } = useContext(CartContext);
+  const quitarDeCarrito = (id) => {
+    Swal.fire({
+      title: "¿Seguro que deseas eliminar este producto?",
+      background: "#424242",
+      color: "#fff",
+      iconColor: "#e65100",
+      icon: "question",
+      showDenyButton: true,
+      denyButtonColor: "#d50000",
+      confirmButtonText: "SI 🗑️",
+      confirmButtonColor: "#4caf50",
+      denyButtonText: `NO`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        deleteById(id);
+        Swal.fire({
+          background: "#424242",
+          color: "#fff",
+          iconColor: "#e65100",
+          title: "Producto eliminado",
+          icon: "success",
+          confirmButtonColor: "#4caf50",
+        });
+      } else if (result.isDenied) {
+        Swal.fire({
+          background: "#424242",
+          color: "#fff",
+          iconColor: "#e65100",
+          title: "Sin cambios",
+          icon: "info",
+          confirmButtonColor: "#4caf50",
+        });
+      }
+    });
+  };
   const limpiarCarrito = () => {
     Swal.fire({
       title: "¿Seguro que deseas limpiar tu carrito?",
@@ -25,7 +60,6 @@ const CartContainer = () => {
       confirmButtonColor: "#4caf50",
       denyButtonText: `NO`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         clearCart();
         Swal.fire({
@@ -48,7 +82,6 @@ const CartContainer = () => {
       }
     });
   };
-
   return (
     <div>
       <h1>Bienvenido a tu Carrito</h1>
@@ -68,9 +101,9 @@ const CartContainer = () => {
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                justifyContent: "space-between", // Alinea los elementos al principio y al final del contenedor
-                alignItems: "center", // Alinea verticalmente los elementos al centro
-                width: "100%", // Ocupa todo el ancho disponible
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%",
               }}
             >
               <div style={{ display: "flex", alignItems: "center" }}>
@@ -97,8 +130,8 @@ const CartContainer = () => {
               <Button
                 variant="outlined"
                 color="error"
-                onClick={() => deleteById(elemento.id)}
-                style={{ marginLeft: "auto" }} // Empuja el botón hacia la derecha
+                onClick={() => quitarDeCarrito(elemento.id)}
+                style={{ marginLeft: "auto" }}
               >
                 <DeleteIcon />
               </Button>
@@ -114,6 +147,7 @@ const CartContainer = () => {
           color="secondary"
           onClick={limpiarCarrito}
           endIcon={<DeleteIcon />}
+          sx={{ margin: "10px 5px" }}
         >
           Limpiar carrito
         </Button>
