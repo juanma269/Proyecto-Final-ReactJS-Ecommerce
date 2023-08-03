@@ -7,9 +7,10 @@ import { CartContext } from "../../context/CartContext";
 import Swal from "sweetalert2";
 
 const ItemDetail = () => {
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, getQuantityById } = useContext(CartContext);
   const [producto, setProducto] = useState({});
   const { id } = useParams();
+  const totalQuantity = getQuantityById(id);
 
   useEffect(() => {
     let productoSeleccionado = products.find((elemento) => elemento.id === +id);
@@ -33,7 +34,11 @@ const ItemDetail = () => {
   };
   return (
     <Container maxWidth="md">
-      <DetailProductCard product={producto} onAdd={onAdd} />
+      <DetailProductCard
+        product={producto}
+        onAdd={onAdd}
+        initial={totalQuantity}
+      />
     </Container>
   );
 };

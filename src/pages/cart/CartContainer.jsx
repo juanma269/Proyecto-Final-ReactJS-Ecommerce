@@ -11,7 +11,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import Swal from "sweetalert2";
 
 const CartContainer = () => {
-  const { cart, clearCart, deleteById } = useContext(CartContext);
+  const { cart, clearCart, deleteById, getTotalPrice, getTotalQuantity } =
+    useContext(CartContext);
+  let total = getTotalPrice();
+  let cantidad = getTotalQuantity();
   const quitarDeCarrito = (id) => {
     Swal.fire({
       title: "¿Seguro que deseas eliminar este producto?",
@@ -94,6 +97,7 @@ const CartContainer = () => {
               border: "2px solid orange",
               display: "flex",
               flexDirection: "row",
+              margin: "2px",
             }}
             variant="outlined"
           >
@@ -142,15 +146,30 @@ const CartContainer = () => {
       {cart.length == 0 ? (
         <h2>Tu carrito está vacío</h2>
       ) : (
-        <Button
-          variant="outlined"
-          color="secondary"
-          onClick={limpiarCarrito}
-          endIcon={<DeleteIcon />}
-          sx={{ margin: "10px 5px" }}
+        <div
+          style={{
+            marginLeft: "6px",
+            border: "1px solid orange",
+            maxWidth: "350px",
+          }}
         >
-          Limpiar carrito
-        </Button>
+          <Typography gutterBottom variant="h5" component="div" margin="10px">
+            Cant. Productos: {cantidad}
+          </Typography>
+          <Typography gutterBottom variant="h5" component="div" margin="10px">
+            Total: ${total}
+          </Typography>
+
+          <Button
+            variant="outlined"
+            color="secondary"
+            onClick={limpiarCarrito}
+            endIcon={<DeleteIcon />}
+            sx={{ margin: "10px 5px" }}
+          >
+            Limpiar carrito
+          </Button>
+        </div>
       )}
     </div>
   );
