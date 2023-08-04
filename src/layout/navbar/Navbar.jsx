@@ -192,7 +192,7 @@ const Navbar = () => {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Opciones">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Perfil" src="robix.png" />
+                  <Avatar alt="Admin" src="robix.png" />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -212,8 +212,9 @@ const Navbar = () => {
                 onClose={handleCloseUserMenu}
               >
                 <MenuItem onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">Perfil</Typography>
+                  <Typography textAlign="center">Admin</Typography>
                 </MenuItem>
+
                 <MenuItem onClick={handleCloseUserMenu}>
                   <Typography textAlign="center">Cerrar Sesion</Typography>
                 </MenuItem>
