@@ -1,8 +1,8 @@
 export let products = [
   {
-    title: "Cougar",
+    title: "Sin stock para probar",
     price: 15000,
-    stock: 4,
+    stock: 0,
     description:
       "Unparalleled Comfort: Fully adjustable and made of first quality materials Ultimate Quality: Class 4 Gas Lift Cylinder Premium Breathable PVC Leather Arm Rest Directions: 4D 180º Reclining and Adjustable Tilting Resistance",
     category: "sillas",
