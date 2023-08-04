@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCheckoutOutlined";
 import Swal from "sweetalert2";
 
 const CartContainer = () => {
@@ -87,7 +88,9 @@ const CartContainer = () => {
   };
   return (
     <div>
-      <h1>Bienvenido a tu Carrito</h1>
+      <Typography variant="h3" color="text.primary" textAlign="center">
+        Bienvenido a tu Carrito
+      </Typography>
       {cart.map((elemento) => {
         return (
           <Card
@@ -144,13 +147,43 @@ const CartContainer = () => {
         );
       })}
       {cart.length == 0 ? (
-        <h2>Tu carrito está vacío</h2>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            marginLeft: "6px",
+            height: "700px",
+            alignContent: "center",
+          }}
+        >
+          <Typography
+            variant="h3"
+            color="text.primary"
+            textAlign="center"
+            marginTop="100px"
+            marginBottom="100px"
+          >
+            Tu carrito está vacío
+          </Typography>
+          <img
+            src="cartempty.png"
+            alt="Carrito Vacio"
+            style={{
+              width: "500px",
+              height: "500px",
+              justifyContent: "center",
+              marginBottom: "100px",
+            }}
+          />
+        </div>
       ) : (
         <div
           style={{
             marginLeft: "6px",
             border: "1px solid orange",
-            maxWidth: "350px",
+            maxWidth: "500px",
           }}
         >
           <Typography gutterBottom variant="h5" component="div" margin="10px">
@@ -168,6 +201,15 @@ const CartContainer = () => {
             sx={{ margin: "10px 5px" }}
           >
             Limpiar carrito
+          </Button>
+          <Button
+            variant="outlined"
+            color="success"
+            onClick={limpiarCarrito}
+            endIcon={<ShoppingCartCheckoutOutlinedIcon />}
+            sx={{ margin: "10px 5px" }}
+          >
+            Proceder Compra
           </Button>
         </div>
       )}
