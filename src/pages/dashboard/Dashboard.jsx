@@ -11,7 +11,19 @@ const Dashboard = () => {
     });
   };
   return (
-    <div>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <img
+        src="cloud.png"
+        alt="Subir a la base"
+        style={{
+          width: "500px",
+          height: "500px",
+          justifyContent: "center",
+          marginBottom: "100px",
+        }}
+      />
       <Button
         variant="contained"
         sx={{ margin: "20px", alignItems: "center" }}
