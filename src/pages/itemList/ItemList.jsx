@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import ProductCard from "../../common/ProductCard/productCard";
+import ProductCard from "../../common/productCard/ProductCard";
 
 const ItemList = ({ items }) => {
   return (
