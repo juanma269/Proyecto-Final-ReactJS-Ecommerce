@@ -10,11 +10,14 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const CheckOutContainer = () => {
   const [orderId, setOrderId] = useState("");
+  const navigate = useNavigate();
 
-  const { cart, getTotalPrice } = useContext(CartContext);
+  const { cart, getTotalPrice, clearCart } = useContext(CartContext);
   const [data, setData] = useState({
     name: "",
     phone: "",
@@ -23,8 +26,7 @@ const CheckOutContainer = () => {
 
   let total = getTotalPrice();
 
-  const handleSubmit = (evento) => {
-    evento.preventDefault();
+  const realizarCompra = () => {
     let order = {
       buyer: data,
       items: cart,
@@ -45,6 +47,46 @@ const CheckOutContainer = () => {
 
   const handleChange = (evento) => {
     setData({ ...data, [evento.target.name]: evento.target.value });
+  };
+  const handleSubmit = (evento) => {
+    evento.preventDefault();
+    Swal.fire({
+      title: "¿Realizar Compra?",
+      background: "#424242",
+      color: "#fff",
+      iconColor: "#e65100",
+      icon: "question",
+      showDenyButton: true,
+      denyButtonColor: "#d50000",
+      confirmButtonText: "SI 🛍️",
+      confirmButtonColor: "#4caf50",
+      denyButtonText: `NO`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        realizarCompra();
+        Swal.fire({
+          background: "#424242",
+          color: "#fff",
+          iconColor: "#e65100",
+          title: "¡Compra Realizada con exito!",
+          icon: "success",
+          confirmButtonColor: "#4caf50",
+          confirmButtonText: "OK 🛍️",
+        }).then(() => {
+          clearCart();
+          navigate("/");
+        });
+      } else if (result.isDenied) {
+        Swal.fire({
+          background: "#424242",
+          color: "#fff",
+          iconColor: "#e65100",
+          title: "Sin cambios",
+          icon: "info",
+          confirmButtonColor: "#4caf50",
+        });
+      }
+    });
   };
 
   return (
