@@ -1,9 +1,13 @@
+import { Typography } from "@mui/material";
 import ProductCard from "../../common/ProductCard/productCard";
 
 const ItemList = ({ items }) => {
   return (
     <div>
-      <h1>Productos</h1>
+      <Typography variant="h3" align="center" margin="20px">
+        Productos
+      </Typography>
+
       <div
         style={{
           width: "100%",
