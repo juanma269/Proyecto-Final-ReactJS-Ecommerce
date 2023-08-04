@@ -1,6 +1,5 @@
 export let products = [
   {
-    id: 1,
     title: "Cougar",
     price: 15000,
     stock: 4,
@@ -10,7 +9,6 @@ export let products = [
     img: "https://www.unicom.com.uy/WS/Fotos_WEB/Articulos/SCOUTS/1200x1200_2.JPG",
   },
   {
-    id: 2,
     title: "Flash Furniture",
     price: 12000,
     stock: 6,
@@ -20,7 +18,6 @@ export let products = [
     img: "https://ae01.alicdn.com/kf/S4b339d9c8791412386fdffdc9ce23492Q.jpg_640x640Q90.jpg_.webp",
   },
   {
-    id: 3,
     title: "VITESSE",
     price: 13000,
     stock: 5,
@@ -30,7 +27,6 @@ export let products = [
     img: "https://f.fcdn.app/imgs/77b232/www.palaciodelamusica.com.uy/pmusuy/82a1/original/catalogo/GC130BB-GC130BB_1/2000-2000/silla-gamer-artec-gc130-negro-azul-silla-gamer-artec-gc130-negro-azul.jpg",
   },
   {
-    id: 4,
     title: "GTPLAYER",
     price: 13500,
     stock: 2,
@@ -40,7 +36,6 @@ export let products = [
     img: "https://cdn.shopify.com/s/files/1/0601/0653/9215/products/ef4e53d14c6389f20f094f23aff2ad3c_2ed61cf0-95d0-40d6-a435-fc3bf2f4ee68_1200x1200.jpg?v=1680071582",
   },
   {
-    id: 5,
     title: "YSSOA",
     price: 12500,
     stock: 3,
@@ -50,7 +45,6 @@ export let products = [
     img: "https://ae01.alicdn.com/kf/H68b6d2f3bacc484a8c7141218975c511r/Silla-ergon-mica-de-cuero-para-Gaming-asiento-de-oficina-para-Internet-en-el-hogar-escritorio.jpg_Q90.jpg_.webp",
   },
   {
-    id: 6,
     title: "🐹MOUSE HAMSTER🐹",
     price: 800,
     stock: 5,
@@ -60,7 +54,6 @@ export let products = [
     img: "https://m.media-amazon.com/images/I/51YIxeSdIGL.jpg",
   },
   {
-    id: 7,
     title: "MOUSE IRON MAN",
     price: 950,
     stock: 8,
@@ -70,7 +63,6 @@ export let products = [
     img: "https://m.media-amazon.com/images/I/41WxA5k1BaL._AC_.jpg",
   },
   {
-    id: 8,
     title: "MOUSE TECURS",
     price: 850,
     stock: 7,
@@ -80,7 +72,6 @@ export let products = [
     img: "https://m.media-amazon.com/images/I/61TX-X80YDL._AC_SL1500_.jpg",
   },
   {
-    id: 9,
     title: "Ratón Trackball inalámbrico Logitech ERGO M575",
     price: 1200,
     stock: 3,
@@ -90,7 +81,6 @@ export let products = [
     img: "https://m.media-amazon.com/images/I/61XGs1IK3NL._AC_SL1500_.jpg",
   },
   {
-    id: 10,
     title: "MOUSE LOGITECH M317C 910-006115 FOREST",
     price: 800,
     stock: 5,
@@ -100,7 +90,6 @@ export let products = [
     img: "https://www.shoppingchina.com.py/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMXZOQkE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--28d09d2891e763e71a46344375e68a7c7c0b82ee/852627.jpg",
   },
   {
-    id: 11,
     title: "TECLADO RED THUNDER",
     price: 1200,
     stock: 10,
@@ -110,7 +99,6 @@ export let products = [
     img: "https://www.pccompu.com.uy/imgs/productos/productos34_48554.jpg",
   },
   {
-    id: 12,
     title: "TECLADO GENESIS THOR 660",
     price: 12500,
     stock: 3,
@@ -120,7 +108,6 @@ export let products = [
     img: "https://www.maximus.com.ar/Temp/App_WebSite/App_PictureFiles/Items/NKG-1844_800.jpg",
   },
   {
-    id: 13,
     title: "Teclado Mecánico MK857 FANTECH Blanco",
     price: 1500,
     stock: 3,
@@ -130,7 +117,6 @@ export let products = [
     img: "https://netpc.uy/wp-content/uploads/2022/08/1-128.jpg",
   },
   {
-    id: 14,
     title: "Teclado Redragon Fizz Pro K616-RGB",
     price: 1800,
     stock: 6,
@@ -140,7 +126,6 @@ export let products = [
     img: "https://www.pccompu.com.uy/imgs/productos/productos34_48554.jpg",
   },
   {
-    id: 15,
     title: "Teclado Redragon Fizz Pro K616-RGB ROSA",
     price: 1800,
     stock: 3,
@@ -150,7 +135,6 @@ export let products = [
     img: "https://exacto.com.mx/uploads/_/TECRDG140.jpg",
   },
   {
-    id: 16,
     title: "Memoria USB 3.0 de 16 GB STEREN",
     price: 1000,
     stock: 5,
@@ -160,7 +144,6 @@ export let products = [
     img: "https://edison.com.mx/wp-content/uploads/2019/09/memoria-usb-3-0-de-16-gb-600x600.jpg",
   },
   {
-    id: 17,
     title: "Memoria USB Kingston Technology DTXM/32GB",
     price: 1500,
     stock: 6,
@@ -170,7 +153,6 @@ export let products = [
     img: "https://bcmimprovement.com/wp-content/uploads/2022/12/MEMKGN3670_full.jpg",
   },
   {
-    id: 18,
     title: "Memoria USB SanDisk Technology DTXM/32GB",
     price: 1300,
     stock: 3,
@@ -180,7 +162,6 @@ export let products = [
     img: "https://http2.mlstatic.com/D_Q_NP_907433-MLA45993614168_052021-F.webp",
   },
   {
-    id: 19,
     title: "Memoria Usb 3.0 De 32 Gb Steren",
     price: 1700,
     stock: 3,
@@ -190,7 +171,6 @@ export let products = [
     img: "https://cdn.luegopago.com/temporary/1%20(70).jpg",
   },
   {
-    id: 20,
     title: "Memoria USB de 16GB Azul Maxel",
     price: 500,
     stock: 5,
