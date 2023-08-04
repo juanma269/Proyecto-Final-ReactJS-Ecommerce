@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import CounterContainer from "../counter/CounterContainer";
 
-const DetailProductCard = ({ product, onAdd }) => {
+const DetailProductCard = ({ product, onAdd, initial }) => {
   return (
     <Card sx={{ maxWidth: 600 }}>
       <CardContent>
@@ -24,9 +24,26 @@ const DetailProductCard = ({ product, onAdd }) => {
           </Typography>
         </Grid>
       </CardContent>
-      <CardActions>
-        <CounterContainer stock={product.stock} onAdd={onAdd} />
-      </CardActions>
+      {typeof initial !== "undefined" && initial === product.stock && (
+        <CardActions>
+          <Typography variant="h5" color="yellow">
+            ⓘ Ya tienes la cantidad maxima en tu carrito ⓘ
+          </Typography>
+        </CardActions>
+      )}
+      {(typeof initial === "undefined" || product.stock > initial) &&
+        product.stock > 0 && (
+          <CardActions>
+            <CounterContainer stock={product.stock} onAdd={onAdd} />
+          </CardActions>
+        )}
+      {product.stock === 0 && (
+        <CardActions>
+          <Typography variant="h5" color="error">
+            ⓘ No hay stock disponible para este producto ⓘ
+          </Typography>
+        </CardActions>
+      )}
     </Card>
   );
 };
