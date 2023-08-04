@@ -12,8 +12,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SmartToyIcon from "@mui/icons-material/SmartToy";
-import { NavLink, Outlet } from "react-router-dom";
-import Footer from "../footer/Footer";
+import { NavLink } from "react-router-dom";
 import CartWidget from "../../common/cartWidget/CartWidget";
 
 const Navbar = () => {
@@ -223,8 +222,6 @@ const Navbar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Outlet />
-      <Footer />
     </>
   );
 };
