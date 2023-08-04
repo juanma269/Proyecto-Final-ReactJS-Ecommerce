@@ -10,6 +10,7 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 import ShoppingCartCheckoutOutlinedIcon from "@mui/icons-material/ShoppingCartCheckoutOutlined";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const CartContainer = () => {
   const { cart, clearCart, deleteById, getTotalPrice, getTotalQuantity } =
@@ -202,15 +203,16 @@ const CartContainer = () => {
           >
             Limpiar carrito
           </Button>
-          <Button
-            variant="outlined"
-            color="success"
-            onClick={limpiarCarrito}
-            endIcon={<ShoppingCartCheckoutOutlinedIcon />}
-            sx={{ margin: "10px 5px" }}
-          >
-            Proceder Compra
-          </Button>
+          <Link to="/checkout">
+            <Button
+              variant="outlined"
+              color="success"
+              endIcon={<ShoppingCartCheckoutOutlinedIcon />}
+              sx={{ margin: "10px 5px" }}
+            >
+              Proceder Compra
+            </Button>
+          </Link>
         </div>
       )}
     </div>
