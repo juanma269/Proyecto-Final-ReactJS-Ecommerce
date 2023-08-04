@@ -20,6 +20,12 @@ const theme = createTheme({
     warning: {
       main: "#ffd600",
     },
+    success: {
+      main: "#2bff19",
+    },
+    info: {
+      main: "#489ade",
+    },
   },
 });
 
